@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎩 Magic Age Guessing Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <span>🎩</span> Magic Age
+        </div>
+        <div class="nav-links">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#play" class="nav-link">Play</a>
+            <a href="#about" class="nav-link">About</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Home/Landing Page -->
+        <section id="home" class="card fade-in">
+            <h2>🎩 Welcome to the Magic Age Guessing Game</h2>
+            <p>Follow the steps, and I'll reveal your age & birth month magically!</p>
+            <p><strong>I will NEVER ask for your age directly!</strong></p>
+            <button class="btn" id="start-btn">Let's Play!</button>
+        </section>
+
+        <!-- Game Steps -->
+        <section id="game-steps" class="hidden">
+            <div class="step-indicator">
+                <div class="step" id="step-1">1</div>
+                <div class="step" id="step-2">2</div>
+                <div class="step" id="step-3">3</div>
+                <div class="step" id="step-4">4</div>
+                <div class="step" id="step-5">5</div>
+            </div>
+
+            <!-- Step 1: Choose a number -->
+            <div class="card fade-in" id="step1-card">
+                <h2>Step 1: Choose Your Secret Number</h2>
+                <p>Think of your age (don't tell me!) and multiply it by 5:</p>
+                <div class="instructions">
+                    <p><strong>Example:</strong> If you're 25 years old:</p>
+                    <p>25 × 5 = 125</p>
+                </div>
+                <p>Remember your result and click Next when ready!</p>
+                <button class="btn" id="step1-btn">Next</button>
+            </div>
+
+            <!-- Step 2: Add a number -->
+            <div class="card hidden fade-in" id="step2-card">
+                <h2>Step 2: Add a Special Number</h2>
+                <p>Now add 8 to your previous result:</p>
+                <div class="instructions">
+                    <p><strong>Example:</strong> 125 + 8 = 133</p>
+                </div>
+                <p>Remember your new result!</p>
+                <button class="btn" id="step2-btn">Next</button>
+            </div>
+
+            <!-- Step 3: Multiply again -->
+            <div class="card hidden fade-in" id="step3-card">
+                <h2>Step 3: Double It!</h2>
+                <p>Multiply your current result by 2:</p>
+                <div class="instructions">
+                    <p><strong>Example:</strong> 133 × 2 = 266</p>
+                </div>
+                <p>Keep that number in mind!</p>
+                <button class="btn" id="step3-btn">Next</button>
+            </div>
+
+            <!-- Step 4: Enter final number -->
+            <div class="card hidden fade-in" id="step4-card">
+                <h2>Step 4: Enter Your Final Number</h2>
+                <p>Please enter the final number you got:</p>
+                <div class="form-group">
+                    <input type="number" id="final-calculation" placeholder="Enter your final number">
+                </div>
+                <button class="btn" id="step4-btn">Next</button>
+            </div>
+
+            <!-- Step 5: Enter birth month -->
+            <div class="card hidden fade-in" id="step5-card">
+                <h2>Step 5: Enter Your Birth Month</h2>
+                <p>Finally, enter your birth month (1-12):</p>
+                <div class="form-group">
+                    <input type="number" id="month-input" min="1" max="12" placeholder="Enter month (1-12)">
+                </div>
+                <button class="btn" id="step5-btn">Reveal Magic!</button>
+            </div>
+        </section>
+
+        <!-- Result Page -->
+        <section id="result" class="card hidden fade-in">
+            <h2>🎉 Magic Revealed! 🎉</h2>
+            <p>Your secret age is:</p>
+            <div class="result">
+                <span id="revealed-age"></span> 🎂
+            </div>
+            <p>And your birth month is:</p>
+            <div class="result">
+                <span id="revealed-month"></span> 📅
+            </div>
+            <div class="instructions" style="margin-top: 1.5rem;">
+                <p><strong>The Magic Formula:</strong></p>
+                <p>((Age × 5 + 8) × 2 - Birth Month) ÷ 10 = Your Age!</p>
+            </div>
+            <button class="btn" id="play-again-btn">Play Again 🔁</button>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="card hidden fade-in">
+            <h2>About This Game</h2>
+            <p>This is a fun math trick game that magically reveals your age and birth month. Built with ❤️ in DG Khan by Muzamil Kareem.</p>
+            <div class="instructions">
+                <p><strong>How the magic works:</strong></p>
+                <p>1. You multiply your age by 5: (Age × 5)</p>
+                <p>2. Add 8: (Age × 5 + 8)</p>
+                <p>3. Multiply by 2: (Age × 10 + 16)</p>
+                <p>4. You tell me this number and your birth month</p>
+                <p>5. I subtract your birth month and then divide by 10 to get your age!</p>
+                <p><strong>Formula:</strong> ((Final Number - Birth Month) - 16) ÷ 10 = Age</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Made with ❤️ in DG Khan by Muzamil Kareem | © 2025 Magic Age Game</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
